@@ -1,0 +1,873 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.siteContainer {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+body {
+  margin: 0;
+  background: #f8f7f3;
+  color: #2c2723;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ─── Header ─── */
+
+.topNav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(248, 247, 243, 0.88);
+  backdrop-filter: blur(14px);
+}
+
+.topNav::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  height: 1px;
+  background: rgba(44, 39, 35, 0.1);
+}
+
+.brand {
+  font-family: "Jost", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: #25211e;
+  letter-spacing: 0.12em;
+}
+
+.topNav nav {
+  display: flex;
+  gap: 32px;
+}
+
+.topNav nav a {
+  position: relative;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5a5148;
+}
+
+.topNav nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 1px;
+  background: #2c2723;
+  transition: width 0.25s ease;
+}
+
+.topNav nav a:hover {
+  color: #2c2723;
+}
+
+.topNav nav a:hover::after {
+  width: 100%;
+}
+
+/* ─── Home Intro ─── */
+
+.homeIntro {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 100px 20px 80px;
+}
+
+.homeIntro p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 68px;
+  line-height: 0.95;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: #2c2723;
+  margin: 0 0 28px;
+}
+
+.homeIntro h1 {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  max-width: 640px;
+  color: #6b5f58;
+}
+
+/* ─── Projects Header ─── */
+
+.projectsHeader {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+}
+
+.projectsHeader h3 {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9c9188;
+  margin: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(44, 39, 35, 0.12);
+}
+
+/* ─── Project Grid ─── */
+
+.projectGrid {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.gridProject {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #ede9e3;
+}
+
+.gridProject img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gridProject:hover img {
+  transform: scale(1.03);
+}
+
+.projectOverlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 14px 16px 16px;
+  background: rgba(248, 247, 243, 0.82);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gridProject:hover .projectOverlay {
+  opacity: 1;
+}
+
+.projectOverlay h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 4px;
+  color: #2c2723;
+}
+
+.projectOverlay p {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #7a6f68;
+  margin: 0;
+}
+
+/* ─── Best Works Slideshow ─── */
+
+.bestWorks {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+.albumCarousel {
+  width: 100%;
+  height: 640px;
+  position: relative;
+  overflow: hidden;
+  background: #ede9e3;
+}
+
+.albumTrack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.albumTrack img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(0.99);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  display: block;
+}
+
+.albumTrack img.activeAlbumSlide {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.albumCarousel::before,
+.albumCarousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.albumCarousel::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(248, 247, 243, 0.6), transparent);
+}
+
+.albumCarousel::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(248, 247, 243, 0.6), transparent);
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(44, 39, 35, 0.18);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  padding-bottom: 3px;
+  line-height: 1;
+  background: rgba(248, 247, 243, 0.8);
+  backdrop-filter: blur(12px);
+  font-size: 32px;
+  font-weight: 300;
+  color: #2c2723;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carouselButton.left {
+  left: 20px;
+}
+
+.carouselButton.right {
+  right: 20px;
+}
+
+.carouselButton:hover {
+  background: rgba(248, 247, 243, 0.97);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* ─── About ─── */
+
+.aboutMe {
+  max-width: 1320px;
+  margin: 0 auto 100px;
+  padding: 70px 20px;
+  display: grid;
+  grid-template-columns: 26% 1fr;
+  gap: 72px;
+  align-items: start;
+  border-top: 1px solid rgba(44, 39, 35, 0.12);
+}
+
+.aboutMe img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.aboutText h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 56px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 0.95;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #2c2723;
+}
+
+.aboutText h3 {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9c9188;
+  margin: 28px 0 10px;
+}
+
+.aboutText p {
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 400;
+  color: #4a413b;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 620px;
+}
+
+.skills span {
+  border: 1px solid rgba(44, 39, 35, 0.25);
+  border-radius: 2px;
+  padding: 5px 10px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #5a5148;
+}
+
+/* ─── Footer ─── */
+
+.footer {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 36px 20px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(44, 39, 35, 0.12);
+}
+
+.footerCopyright {
+  margin: 0;
+  font-size: 12px;
+  color: #9c9188;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 28px;
+}
+
+.footerLinks p {
+  margin: 0;
+  font-size: 13px;
+  color: #5a5148;
+}
+
+.linkedinLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #5a5148;
+  transition: color 0.2s;
+}
+
+.linkedinLink:hover {
+  color: #2c2723;
+}
+
+.linkedinIcon {
+  width: 15px;
+  height: 15px;
+  border: 1px solid currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.socialIcon {
+  width: 15px;
+  height: 15px;
+  border: 1px solid currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ─── Project Detail Page ─── */
+
+.projectDetailPage {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 70px 20px 120px;
+  display: grid;
+  grid-template-columns: 32% 68%;
+  gap: 0;
+  align-items: stretch;
+}
+
+.projectDetailText {
+  padding-right: 60px;
+  display: flex;
+  flex-direction: column;
+  min-height: 620px;
+  position: sticky;
+  top: 90px;
+  align-self: start;
+}
+
+.projectDetailText h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 42px;
+  line-height: 1.0;
+  font-weight: 300;
+  margin-bottom: 24px;
+  color: #2c2723;
+}
+
+.projectImageSide {
+  width: 100%;
+  min-width: 0;
+}
+
+.projectFacts {
+  margin-bottom: 14px;
+}
+
+.projectFacts p {
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+  color: #6b5f58;
+}
+
+.projectFacts strong {
+  font-weight: 500;
+  color: #2c2723;
+}
+
+.software {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 12px 0;
+}
+
+.software span {
+  border: 1px solid rgba(44, 39, 35, 0.2);
+  border-radius: 2px;
+  padding: 3px 8px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: #7a6f68;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(44, 39, 35, 0.12);
+  margin: 16px 0;
+}
+
+.introText {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #2c2723;
+  margin-bottom: 12px !important;
+}
+
+.projectFacts p,
+.projectDetailText p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #6b5f58;
+}
+
+.backHomeButton {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9c9188;
+  transition: color 0.2s;
+}
+
+.backHomeButton:hover {
+  color: #2c2723;
+}
+
+.backHomeButton span {
+  font-size: 16px;
+  transition: transform 0.25s ease;
+}
+
+.backHomeButton:hover span {
+  transform: translateX(-3px);
+}
+
+/* ─── Project Slideshow ─── */
+
+.projectSlideshow {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  overflow: hidden;
+  background: #ede9e3;
+}
+
+.projectSlideshow img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transform: scale(0.99);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.projectSlideshow img.activeProjectSlide {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.projectArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(44, 39, 35, 0.18);
+  border-radius: 50%;
+  background: rgba(248, 247, 243, 0.8);
+  backdrop-filter: blur(12px);
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: background 0.2s ease;
+}
+
+.projectArrow:hover {
+  background: rgba(248, 247, 243, 0.97);
+}
+
+.projectArrow.left {
+  left: 16px;
+}
+
+.projectArrow.right {
+  right: 16px;
+}
+
+.projectThumbs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-top: 10px;
+}
+
+.projectThumbs::-webkit-scrollbar {
+  height: 3px;
+}
+
+.projectThumbs::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.projectThumbs::-webkit-scrollbar-thumb {
+  background: rgba(44, 39, 35, 0.2);
+  border-radius: 2px;
+}
+
+.projectThumbs button {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.35;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.projectThumbs button:hover {
+  opacity: 0.7;
+}
+
+.projectThumbs button.activeThumb {
+  opacity: 1;
+}
+
+.projectThumbs img {
+  height: 70px;
+  width: auto;
+  display: block;
+}
+
+/* ─── Not Found ─── */
+
+.notFound {
+  padding: 80px;
+}
+
+/* ─── Unused / legacy classes kept for safety ─── */
+
+.projectPageLayout {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 70px 20px 20px;
+  display: grid;
+  grid-template-columns: 32% 1fr;
+  gap: 56px;
+}
+
+.projectTextPanel {
+  position: sticky;
+  top: 90px;
+  align-self: start;
+}
+
+.projectTextPanel h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.projectTextPanel p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #6b5f58;
+}
+
+.collageGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background: white;
+  padding: 8px;
+}
+
+.collageGrid button,
+.thumbnailRail button {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.collageGrid img {
+  width: 100%;
+  height: 270px;
+  object-fit: contain;
+  background: #f1f1f1;
+  display: block;
+}
+
+.thumbnailRail {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-top: 20px;
+}
+
+.thumbnailRail img {
+  height: 110px;
+  width: auto;
+  display: block;
+  background: white;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.modal img {
+  max-width: 95vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.closeButton {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  background: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+/* ─── Mobile ─── */
+
+@media (max-width: 900px) {
+  .topNav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .topNav nav {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .homeIntro p {
+    font-size: 42px;
+  }
+
+  .homeIntro h1 {
+    font-size: 15px;
+  }
+
+  .projectGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+
+  .albumCarousel {
+    height: 280px;
+  }
+
+  .carouselButton {
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+  }
+
+  .aboutMe {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .aboutText h2 {
+    font-size: 40px;
+  }
+
+  .projectDetailPage {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .projectDetailText {
+    position: static;
+    padding-right: 0;
+    min-height: unset;
+  }
+
+  .projectSlideshow {
+    height: 340px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footerLinks {
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+  }
+
+  .projectPageLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .collageGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectTextPanel {
+    position: static;
+    min-height: unset;
+  }
+}
+
+/* ─── Slideshow dot indicators ─── */
+
+.slideDots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 4;
+}
+
+.slideDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(248, 247, 243, 0.45);
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.slideDot.activeDot {
+  background: rgba(248, 247, 243, 0.95);
+  transform: scale(1.3);
+}
