@@ -1,23 +1,30 @@
 import Link from "next/link";
 import { projects } from "@/data/projects";
 import BestWorksSlideshow from "./BestWorksSlideshow";
+import Typewriter from "./Typewriter";
+import Footer from "./Footer";
+import SkillsBoard from "./SkillsBoard";
 
 export default function Home() {
   return (
     <main>
-      <header className="siteContainer topNav">
-        <Link href="/" className="brand">SHUREE BATBOLD</Link>
+   <header className="topNav">
+        <div className="siteContainer topNavInner">
+          <Link href="/" className="brand">SHUREE BATBOLD</Link>
 
-        <nav>
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-          <a href="/files/resume.pdf" target="_blank">Resume</a>
-          <a href="/files/portfolio.pdf" target="_blank">Portfolio PDF</a>
-        </nav>
+          <nav>
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="/files/resume.pdf" target="_blank">Resume PDF</a>
+            <a href="/files/portfolio.pdf" target="_blank">Portfolio PDF</a>
+          </nav>
+        </div>
       </header>
 
    <section className="homeIntro">
-  <p>Welcome ,</p>
+  <p>
+    Welcome, I&rsquo;m <Typewriter />
+  </p>
 
   <h1>
     Thank you for visiting my portfolio. Please
@@ -79,42 +86,18 @@ export default function Home() {
             <span>Microsoft Office</span>
             <span>Blender</span>
             <span>ArcGIS</span>
+            <span>AutoCAD</span>
+            <span>Procreate</span>
+            <span>After Effects</span>
+            <span>Canva</span>
+            <span>SketchUp</span>
           </div>
         </div>
       </section>
 
- <footer className="siteContainer footer">
+      <SkillsBoard />
 
-  <p className="footerCopyright">
-    Copyright © Shuree Batbold
-  </p>
-
-<div className="footerLinks">
-  <p>shureehne@gmail.com</p>
-  <p>(571) 622-9401</p>
-
-  <a
-    href="https://linkedin.com/in/shureebat"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="linkedinLink"
-  >
-    <span className="linkedinIcon">in</span>
-    LinkedIn
-  </a>
-
-  <a
-    href="https://instagram.com/shueiverse"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="linkedinLink"
-  >
-    <span className="socialIcon">ig</span>
-    Instagram
-  </a>
-</div>
-
-</footer>
+ <Footer />
     </main>
   );
 }

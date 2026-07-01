@@ -4,6 +4,7 @@ import Link from "next/link";
 import { projects } from "@/data/projects";
 import { useState } from "react";
 import { useParams } from "next/navigation";
+import Footer from "../../Footer";
 
 export default function ProjectPage() {
   const params = useParams();
@@ -35,15 +36,17 @@ export default function ProjectPage() {
 
   return (
     <main>
-      <header className="topNav">
-        <Link href="/" className="brand">SHUREE BATBOLD</Link>
+     <header className="topNav">
+        <div className="siteContainer topNavInner">
+          <Link href="/" className="brand">SHUREE BATBOLD</Link>
 
-        <nav>
-          <Link href="/#projects">Projects</Link>
-          <Link href="/#about">About</Link>
-          <a href="/files/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-          <a href="/files/portfolio.pdf" target="_blank" rel="noopener noreferrer">Portfolio PDF</a>
-        </nav>
+          <nav>
+            <Link href="/#projects">Projects</Link>
+            <Link href="/#about">About</Link>
+            <a href="/files/resume.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
+            <a href="/files/portfolio.pdf" target="_blank" rel="noopener noreferrer">Portfolio PDF</a>
+          </nav>
+        </div>
       </header>
 
       <section className="projectDetailPage">
@@ -103,6 +106,8 @@ export default function ProjectPage() {
           </div>
         </section>
       </section>
+
+      <Footer />
     </main>
   );
 }

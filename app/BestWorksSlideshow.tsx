@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const slides = [
   "/images/slideshow/slide1.jpeg",
@@ -17,81 +17,127 @@ const slides = [
   "/images/slideshow/slide13.png",
 ];
 
-const INTERVAL = 4000;
+// Rendered twice back-to-back so the loop can wrap seamlessly.
+const loopSlides = [...slides, ...slides];
+
+const SPEED_PX_PER_SEC = 50; // continuous auto-scroll speed — higher = faster drift
 
 export default function BestWorksSlideshow() {
-  const [current, setCurrent] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const firstSlideRef = useRef<HTMLDivElement>(null);
+  const loopMarkerRef = useRef<HTMLDivElement>(null);
 
-  function startTimer() {
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, INTERVAL);
+  const loopWidthRef = useRef(0);
+  const positionRef = useRef(0);
+  const pausedRef = useRef(false);
+  const draggingRef = useRef(false);
+  const dragStartX = useRef(0);
+  const dragStartPos = useRef(0);
+  const rafRef = useRef<number | null>(null);
+  const lastTimeRef = useRef<number | null>(null);
+
+  function measureLoopWidth() {
+    if (firstSlideRef.current && loopMarkerRef.current) {
+      const a = firstSlideRef.current.getBoundingClientRect().left;
+      const b = loopMarkerRef.current.getBoundingClientRect().left;
+      loopWidthRef.current = b - a;
+    }
   }
 
-  function stopTimer() {
-    if (timerRef.current) clearInterval(timerRef.current);
+  function applyTransform() {
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translateX(${-positionRef.current}px)`;
+    }
   }
 
   useEffect(() => {
-    if (!paused) {
-      startTimer();
-    } else {
-      stopTimer();
-    }
-    return () => stopTimer();
-  }, [paused]);
+    measureLoopWidth();
 
-  function goPrevious() {
-    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-    // restart the timer from zero so it doesn't jump right after a manual click
-    if (!paused) startTimer();
+    const observer = new ResizeObserver(() => measureLoopWidth());
+    if (trackRef.current) observer.observe(trackRef.current);
+    window.addEventListener("resize", measureLoopWidth);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measureLoopWidth);
+    };
+  }, []);
+
+  useEffect(() => {
+    function frame(time: number) {
+      if (lastTimeRef.current === null) lastTimeRef.current = time;
+      const dt = (time - lastTimeRef.current) / 1000;
+      lastTimeRef.current = time;
+
+      if (!pausedRef.current && !draggingRef.current && loopWidthRef.current > 0) {
+        positionRef.current += SPEED_PX_PER_SEC * dt;
+        if (positionRef.current >= loopWidthRef.current) {
+          positionRef.current -= loopWidthRef.current;
+        }
+        applyTransform();
+      }
+
+      rafRef.current = requestAnimationFrame(frame);
+    }
+
+    rafRef.current = requestAnimationFrame(frame);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
+
+  function handlePointerDown(e: React.PointerEvent<HTMLDivElement>) {
+    e.currentTarget.setPointerCapture(e.pointerId);
+    draggingRef.current = true;
+    dragStartX.current = e.clientX;
+    dragStartPos.current = positionRef.current;
   }
 
-  function goNext() {
-    setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    if (!paused) startTimer();
+  function handlePointerMove(e: React.PointerEvent<HTMLDivElement>) {
+    if (!draggingRef.current || loopWidthRef.current === 0) return;
+    const delta = e.clientX - dragStartX.current;
+    const loop = loopWidthRef.current;
+    let next = dragStartPos.current - delta;
+    next = ((next % loop) + loop) % loop;
+    positionRef.current = next;
+    applyTransform();
+  }
+
+  function handlePointerUp() {
+    draggingRef.current = false;
   }
 
   return (
-    <section className="bestWorks">
+    <section className="bestWorksFrame">
+      <div className="bestWorksLabel">
+        <h3>Selected Moments</h3>
+        <p className="bestWorksHint">Drag to explore</p>
+      </div>
+
       <div
-        className="albumCarousel"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
+        className="filmstripViewport"
+        onMouseEnter={() => (pausedRef.current = true)}
+        onMouseLeave={() => (pausedRef.current = false)}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={handlePointerUp}
       >
-        <button className="carouselButton left" onClick={goPrevious} aria-label="Previous slide">
-          ‹
-        </button>
-
-        <div className="albumTrack">
-          {slides.map((slide, index) => (
-            <img
-              key={slide}
-              src={slide}
-              alt=""
-              className={index === current ? "activeAlbumSlide" : ""}
-            />
-          ))}
-        </div>
-
-        <button className="carouselButton right" onClick={goNext} aria-label="Next slide">
-          ›
-        </button>
-
-        {/* dot indicators */}
-        <div className="slideDots" aria-hidden="true">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              className={`slideDot${index === current ? " activeDot" : ""}`}
-              onClick={() => {
-                setCurrent(index);
-                if (!paused) startTimer();
-              }}
-            />
+        <div className="filmstripTrack" ref={trackRef}>
+          {loopSlides.map((slide, index) => (
+            <div
+              className="filmstripSlide"
+              key={`${slide}-${index}`}
+              ref={
+                index === 0
+                  ? firstSlideRef
+                  : index === slides.length
+                  ? loopMarkerRef
+                  : undefined
+              }
+            >
+              <img src={slide} alt="" className="kenBurnsLoop" draggable={false} />
+            </div>
           ))}
         </div>
       </div>
