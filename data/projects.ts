@@ -2,9 +2,9 @@ export const projects = [
   {
     slug: "between-ages",
     title: "Between Ages",
-    program: "Intergenerational Community Center",
-    location: "Washington, DC",
-    area: "Concept Design",
+    program: "Intergenerational Community Center, Adaptive Reuse",
+    location: "900 Wesley Pl, Washington, DC",
+    area: "~20,000 SF",
     date: "Spring 2026",
     software: ["Revit", "Enscape", "Photoshop", "Illustrator", "InDesign"],
     hero: "/images/between-ages/hero.png",
@@ -31,7 +31,7 @@ export const projects = [
     title: "Whitefish Primary Care Clinic",
     program: "Healthcare Design",
     location: "Whitefish, Montana",
-    area: "~5,600 SF",
+    area: "~8,000 SF",
     date: "Fall 2025",
     software: ["Revit", "Enscape", "Photoshop", "Illustrator", "InDesign"],
     hero: "/images/whitefish-clinic/hero.jpeg",
@@ -58,8 +58,8 @@ export const projects = [
     title: "Florence Bookstore",
     program: "Retail / Cultural Design",
     location: "Florence, Italy",
-    area: "Concept Design",
-    date: "2025",
+    area: "~8000 SF",
+    date: "Summer 2025",
     software: ["Revit", "Enscape", "Photoshop", "Illustrator", "InDesign"],
     hero: "/images/florence-bookstore/hero.jpeg",
     images: [
@@ -81,9 +81,9 @@ export const projects = [
   {
     slug: "artist-live-work",
     title: "Artist Live / Work Space",
-    program: "Residential / Creative Workspace",
+    program: "Residential",
     location: "Washington, DC",
-    area: "Concept Design",
+    area: "~3600 SF",
     date: "2025",
     software: ["Revit", "Enscape", "Photoshop", "Illustrator", "InDesign"],
     hero: "/images/artist-live-work/hero.jpeg",
@@ -101,10 +101,10 @@ export const projects = [
   },
   {
     slug: "mount-pleasant-bar",
-    title: "Mount Pleasant Drum Circle Bar",
+    title: "Drum Circle Bar",
     program: "Hospitality Design",
-    location: "Washington, DC",
-    area: "Concept Design",
+    location: "Mount Pleasant, Washington, DC",
+    area: "~1600 SF",
     date: "2025",
     software: ["Revit", "Enscape", "Photoshop", "Illustrator", "InDesign"],
     hero: "/images/mount-pleasant-bar/hero.jpeg",
@@ -139,6 +139,6 @@ export const projects = [
     intro:
       "A collection of hand sketches, digital drawings, portraits, and visual studies.",
     body:
-      "This section includes traditional pencil sketches, concept drawings, digital paintings, and portrait studies created through Photoshop and Procreate. These works show observation, composition, hand control, and visual storytelling.",
+      "This section includes traditional pencil sketches, concept drawings, digital paintings, and portrait studies created through Photoshop and Procreate. ",
   },
 ];

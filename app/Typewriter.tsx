@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 // Edit this list to change which roles cycle through the typewriter.
 const ROLES = [
   "an Interior Designer",
-  "a Graphic Designer",
   "a Visual Artist",
   "a Storyteller",
 ];

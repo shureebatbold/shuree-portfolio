@@ -60,13 +60,13 @@ export default function Home() {
           <h2>About</h2>
           <p>
             I am an MFA Interior Architecture graduate from George Washington University
-            focused on creating thoughtful, people-centered spaces that balance
-            functionality, well-being, and aesthetics.
+            focused on creating thoughtful, people centered spaces that balance
+            functionality, wellbeing, and aesthetics.
           </p>
 
           <h3>Interests</h3>
           <p>
-            Commercial Interiors  ·  Workplace  ·  Hospitality  ·  Healthcare  ·  Community-Centered Design  ·  Sustainability
+            Commercial Interiors  ·  Workplace  ·  Hospitality  ·  Healthcare  ·  Community Centered Design  ·  Sustainability  ·  Residential
           </p>
 
           <h3>Awards / Recognition</h3>
@@ -89,7 +89,7 @@ export default function Home() {
             <span>AutoCAD</span>
             <span>Procreate</span>
             <span>After Effects</span>
-            <span>Canva</span>
+            <span>Bluebeam Revu</span>
             <span>SketchUp</span>
           </div>
         </div>
