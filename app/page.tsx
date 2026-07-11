@@ -15,8 +15,8 @@ export default function Home() {
           <nav>
             <a href="#projects">Projects</a>
             <a href="#about">About</a>
-            <a href="/files/resume.pdf" target="_blank">Resume PDF</a>
-            <a href="/files/portfolio.pdf" target="_blank">Portfolio PDF</a>
+            <a href="/files/Resume_Shuree Batbold.pdf" target="_blank">Resume PDF</a>
+            <a href="/files/Portfolio_Shuree Batbold.pdf" target="_blank">Portfolio PDF</a>
           </nav>
         </div>
       </header>

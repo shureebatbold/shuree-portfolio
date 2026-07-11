@@ -8,8 +8,8 @@ const SOCIAL_LINKS = [
 const SECTION_LINKS = [
   { label: "About", href: "/#about" },
   { label: "Projects", href: "/#projects" },
-  { label: "Resume PDF", href: "/files/resume.pdf" },
-  { label: "Portfolio PDF", href: "/files/portfolio.pdf" },
+  { label: "Resume PDF", href: "/files/Resume_Shuree Batbold.pdf" },
+  { label: "Portfolio PDF", href: "/files/Portfolio_Shuree Batbold.pdf" },
 ];
 
 // Repeated once — the CSS animation shifts the track by exactly 50%,

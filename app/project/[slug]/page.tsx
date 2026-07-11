@@ -107,8 +107,8 @@ export default function ProjectPage() {
           <nav>
             <Link href="/#projects">Projects</Link>
             <Link href="/#about">About</Link>
-            <a href="/files/resume.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
-            <a href="/files/portfolio.pdf" target="_blank" rel="noopener noreferrer">Portfolio PDF</a>
+            <a href="/files/Resume_Shuree Batbold.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
+            <a href="/files/Portfolio_Shuree Batbold.pdf" target="_blank" rel="noopener noreferrer">Portfolio PDF</a>
           </nav>
         </div>
       </header>
