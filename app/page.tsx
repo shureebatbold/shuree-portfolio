@@ -67,19 +67,19 @@ export default function Home() {
           <p>
             I am an MFA Interior Architecture graduate from George Washington University
             focused on creating thoughtful, people-centered spaces that balance
-            functionality, well-being, and aesthetics.
+            functionality, wellbeing, and aesthetics.
           </p>
 
           <h3>Interests</h3>
           <p>
-            Commercial Interiors  ·  Workplace  ·  Hospitality  ·  Healthcare  ·  Community-Centered Design  ·  Sustainability
+            Commercial Interiors   ·   Workplace   ·   Hospitality   ·   Healthcare   ·   Community Centered Design   ·   Residential   ·   Sustainability
           </p>
 
           <h3>Awards / Recognition</h3>
           <p>IIDA Student Premiere Awards, 2026</p>
 
           <h3>Organizations / Involvement</h3>
-          <p>IIDA · ASID · NEWH</p>
+          <p>IIDA   ·   ASID   ·   NEWH</p>
 
           <h3>Skills</h3>
           <div className="skills">
@@ -92,6 +92,11 @@ export default function Home() {
             <span>Microsoft Office</span>
             <span>Blender</span>
             <span>ArcGIS</span>
+            <span>HTML/CSS</span>
+            <span>Javascript</span>
+            <span>Procreate Office</span>
+            <span>AutoCAD</span>
+            <span>Bluebeam Revu</span>
           </div>
         </div>
       </section>

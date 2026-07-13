@@ -220,7 +220,7 @@ export default function ProjectPage() {
         <section className="siteContainer digitalArtSection">
           <div className="digitalArtHeader">
             <h3>Digital Art Gallery</h3>
-            <p className="digitalArtHint">A wall of ongoing digital work</p>
+         
           </div>
           <DigitalArtGrid items={digitalArtGallery} />
         </section>
