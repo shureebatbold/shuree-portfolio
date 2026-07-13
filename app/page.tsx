@@ -72,7 +72,7 @@ export default function Home() {
 
           <h3>Interests</h3>
           <p>
-            Commercial Interiors   ·   Workplace   ·   Hospitality   ·   Healthcare   ·   Community Centered Design   ·   Residential   ·   Sustainability
+            Commercial Interiors   ·   Workplace   ·   Hospitality   ·   Healthcare   ·   Community Centered Design ·   Sustainability
           </p>
 
           <h3>Awards / Recognition</h3>
