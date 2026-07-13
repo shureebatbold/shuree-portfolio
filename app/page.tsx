@@ -4,11 +4,13 @@ import BestWorksSlideshow from "./BestWorksSlideshow";
 import Typewriter from "./Typewriter";
 import Footer from "./Footer";
 import SkillsBoard from "./SkillsBoard";
+import PhotoAlbum from "./PhotoAlbum";
+import { albumPhotos } from "./albumPhotos";
 
 export default function Home() {
   return (
     <main>
-   <header className="topNav">
+      <header className="topNav">
         <div className="siteContainer topNavInner">
           <Link href="/" className="brand">SHUREE BATBOLD</Link>
 
@@ -22,15 +24,19 @@ export default function Home() {
       </header>
 
    <section className="homeIntro">
-  <p>
-    Welcome, I&rsquo;m <Typewriter />
-  </p>
+  <div className="homeIntroText">
+    <p>
+      Welcome, I&rsquo;m <Typewriter />
+    </p>
 
-  <h1>
-    Thank you for visiting my portfolio. Please
-    feel free to explore my work, and if you have any questions or
-    would like to connect, I would love to hear from you!
-  </h1>
+    <h1>
+      Thank you for visiting my portfolio. Please
+      feel free to explore my work, and if you have any questions or
+      would like to connect, I would love to hear from you!
+    </h1>
+  </div>
+
+  <PhotoAlbum photos={albumPhotos} />
 </section>
 
 <section className="projectsHeader">
@@ -60,13 +66,13 @@ export default function Home() {
           <h2>About</h2>
           <p>
             I am an MFA Interior Architecture graduate from George Washington University
-            focused on creating thoughtful, people centered spaces that balance
-            functionality, wellbeing, and aesthetics.
+            focused on creating thoughtful, people-centered spaces that balance
+            functionality, well-being, and aesthetics.
           </p>
 
           <h3>Interests</h3>
           <p>
-            Commercial Interiors  ·  Workplace  ·  Hospitality  ·  Healthcare  ·  Community Centered Design  ·  Sustainability  ·  Residential
+            Commercial Interiors  ·  Workplace  ·  Hospitality  ·  Healthcare  ·  Community-Centered Design  ·  Sustainability
           </p>
 
           <h3>Awards / Recognition</h3>
@@ -86,11 +92,6 @@ export default function Home() {
             <span>Microsoft Office</span>
             <span>Blender</span>
             <span>ArcGIS</span>
-            <span>AutoCAD</span>
-            <span>Procreate</span>
-            <span>After Effects</span>
-            <span>Bluebeam Revu</span>
-            <span>SketchUp</span>
           </div>
         </div>
       </section>
