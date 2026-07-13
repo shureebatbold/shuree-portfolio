@@ -96,7 +96,6 @@ export default function Home() {
             <span>Javascript</span>
             <span>Procreate Office</span>
             <span>AutoCAD</span>
-            <span>Bluebeam Revu</span>
           </div>
         </div>
       </section>
