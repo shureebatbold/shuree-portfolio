@@ -79,7 +79,7 @@ export default function SkillsBoard() {
     <section className="skillsBoard siteContainer" id="skills">
       <div className="skillsBoardHeader">
         <div>
-          <h3 className="skillsBoardTitle">Tools &amp; Software</h3>
+          <h3 className="skillsBoardTitle">My Tools &amp; Software</h3>
           <p className="skillsBoardHint">Drag the cards around ✨</p>
         </div>
         <button className="skillsBoardReset" onClick={resetLayout}>

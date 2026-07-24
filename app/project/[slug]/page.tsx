@@ -9,6 +9,7 @@ import { SOFTWARE_ICONS } from "../../softwareIcons";
 import HolePunchArt from "../../HolePunchArt";
 import DigitalArtGrid from "../../DigitalArtGrid";
 import { digitalArtGallery } from "../../digitalArtGallery";
+import ClickGallery from "../../ClickGallery";
 
 const AUTOPLAY_MS = 5000; // how long each hero image stays before auto-advancing
 const SWIPE_THRESHOLD = 60; // px of drag needed to trigger a slide change
@@ -98,6 +99,9 @@ export default function ProjectPage() {
     ? `translateX(calc(-${current * 100}% + ${dragOffset}px))`
     : `translateX(-${current * 100}%)`;
 
+  const galleryList =
+    project.galleryImages.length > 0 ? project.galleryImages : project.images;
+
   return (
     <main>
       <header className="topNav">
@@ -107,8 +111,8 @@ export default function ProjectPage() {
           <nav>
             <Link href="/#projects">Projects</Link>
             <Link href="/#about">About</Link>
-            <a href="/files/Resume_Shuree Batbold.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
-            <a href="/files/Portfolio_Shuree Batbold.pdf" target="_blank" rel="noopener noreferrer">Portfolio PDF</a>
+            <a href="/files/resume.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
+            <a href="/files/portfolio.pdf" target="_blank" rel="noopener noreferrer">Portfolio PDF</a>
           </nav>
         </div>
       </header>
@@ -118,7 +122,6 @@ export default function ProjectPage() {
           <h1>{project.title}</h1>
 
           <div className="projectFacts">
-            <p><strong>Program</strong> — {project.program}</p>
             <p><strong>Location</strong> — {project.location}</p>
             <p><strong>Area</strong> — {project.area}</p>
             <p><strong>Date</strong> — {project.date}</p>
@@ -138,10 +141,9 @@ export default function ProjectPage() {
             })}
           </div>
 
-          <hr />
-
-          <p className="introText">{project.intro}</p>
-          <p>{project.body}</p>
+          {project.body.split("\n\n").map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
 
           <Link href="/" className="backHomeButton">
             <span>←</span>
@@ -189,6 +191,25 @@ export default function ProjectPage() {
                 }}
               />
             </div>
+
+            {imageCount > 1 && (
+              <>
+                <button
+                  className="projectCarouselArrow left"
+                  onClick={goPrevious}
+                  aria-label="Previous image"
+                >
+                  ‹
+                </button>
+                <button
+                  className="projectCarouselArrow right"
+                  onClick={goNext}
+                  aria-label="Next image"
+                >
+                  ›
+                </button>
+              </>
+            )}
           </div>
 
           <div className="projectThumbs">
@@ -220,7 +241,7 @@ export default function ProjectPage() {
         <section className="siteContainer digitalArtSection">
           <div className="digitalArtHeader">
             <h3>Digital Art Gallery</h3>
-         
+            <p className="digitalArtHint">A wall of ongoing digital work</p>
           </div>
           <DigitalArtGrid items={digitalArtGallery} />
         </section>
@@ -228,24 +249,8 @@ export default function ProjectPage() {
 
       {project.slug !== "sketches" && (
         <section className="projectGalleryFrame">
-          <div className="siteContainer projectGallery" id="gallery">
-            <div className="projectGalleryHeader">
-              <h3>Process &amp; Gallery</h3>
-              <p className="projectGalleryHint">A closer look at the full project</p>
-            </div>
-
-            <div className="projectGalleryGrid">
-              {project.images.map((image, index) => (
-                <div className="projectGalleryItem" key={image}>
-                  <img
-                    src={image}
-                    alt={`${project.title} — image ${index + 1}`}
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <p className="siteContainer clickGalleryHint">Click to see the next image</p>
+          <ClickGallery images={galleryList} title={project.title} />
         </section>
       )}
 

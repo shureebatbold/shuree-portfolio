@@ -21,6 +21,7 @@ export const projects = [
       "/images/between-ages/image9.png",
       "/images/between-ages/image10.png",
     ],
+    galleryImages: [] as string[],
     intro:
       "An intergenerational community center designed to connect seniors and children through shared learning, storytelling, play, wellness, and everyday care.",
     body:
@@ -28,30 +29,62 @@ export const projects = [
   },
   {
     slug: "whitefish-clinic",
-    title: "Whitefish Primary Care Clinic",
+    title: "Whitefish Clinic",
     program: "Healthcare Design",
     location: "Whitefish, Montana",
     area: "~8,000 SF",
     date: "Fall 2025",
-    software: ["Revit", "Enscape", "Photoshop", "Illustrator", "InDesign"],
+    software: ["Revit", "Enscape", "Photoshop"],
     hero: "/images/whitefish-clinic/hero.jpeg",
     images: [
+      "/images/whitefish-clinic/process/1.png",
+      "/images/whitefish-clinic/process/2.png",
+      "/images/whitefish-clinic/process/3.png",
+      "/images/whitefish-clinic/process/4.png",
+      "/images/whitefish-clinic/process/5.png",
+      "/images/whitefish-clinic/process/6.png",
+      "/images/whitefish-clinic/process/7.png",
+      "/images/whitefish-clinic/process/8.png",
+      "/images/whitefish-clinic/process/9.png",
+      "/images/whitefish-clinic/process/10.png",
+      "/images/whitefish-clinic/process/11.png",
+      "/images/whitefish-clinic/process/12.png",
+      "/images/whitefish-clinic/process/13.png",
+      "/images/whitefish-clinic/process/14.png",
+      "/images/whitefish-clinic/process/15.png",
+      "/images/whitefish-clinic/process/16.png",
+      "/images/whitefish-clinic/process/17.png",
+      "/images/whitefish-clinic/process/18.png",
+      "/images/whitefish-clinic/process/19.png",
+      "/images/whitefish-clinic/process/20.png",
+      "/images/whitefish-clinic/process/21.png",
+      "/images/whitefish-clinic/process/22.png",
+      "/images/whitefish-clinic/process/23.png",
+      "/images/whitefish-clinic/process/24.png",
+      "/images/whitefish-clinic/process/25.png",
+      "/images/whitefish-clinic/process/26.png",
+      "/images/whitefish-clinic/process/27.png",
+      "/images/whitefish-clinic/process/28.png",
+      "/images/whitefish-clinic/process/29.png",
+      "/images/whitefish-clinic/process/30.png",
+    ],
+    galleryImages: [
       "/images/whitefish-clinic/hero.jpeg",
-    "/images/whitefish-clinic/image1.png",
+      "/images/whitefish-clinic/image1.png",
       "/images/whitefish-clinic/image2.png",
       "/images/whitefish-clinic/image3.png",
       "/images/whitefish-clinic/image4.png",
       "/images/whitefish-clinic/image5.png",
-       "/images/whitefish-clinic/image6.png",
+      "/images/whitefish-clinic/image6.png",
       "/images/whitefish-clinic/image7.png",
       "/images/whitefish-clinic/image8.png",
       "/images/whitefish-clinic/image9.png",
       "/images/whitefish-clinic/image10.png",
-    ],
+    ] as string[],
     intro:
       "A rural primary care clinic inspired by warmth, clarity, comfort, and ski-resort wayfinding.",
     body:
-      "The project focuses on patient comfort, intuitive navigation, accessibility, daylight, and emotional ease. The design balances clinical efficiency with a welcoming lodge-like atmosphere for patients, staff, and caregivers.",
+      "Whitefish Primary Care Clinic began with a simple question: how can a medical environment feel clear and efficient without losing its warmth and humanity? I approached the project through research into rural healthcare access, patient stress, staff workflow, accessibility, aging populations, and sensory needs. These insights shaped programming, adjacencies, and circulation, creating a clear patient journey that supports privacy and efficient care.\n\nInspired by a ski resort, the concept Guiding Slope was developed to connect wayfinding to Whitefish. Warm wood tones and lodge inspired finishes create a welcoming arrival, while cooler clinical areas support focus and cleanliness. Curved ceilings, framed sightlines, daylight, and color coded paths guide movement naturally. A sensory room offers a calm retreat, while exam rooms and staff areas balance comfort, privacy, and workflow.",
   },
   {
     slug: "florence-bookstore",
@@ -73,6 +106,7 @@ export const projects = [
       "/images/florence-bookstore/image7.jpeg",
       "/images/florence-bookstore/image8.jpeg",
     ],
+    galleryImages: [] as string[],
     intro:
       "A bookstore concept exploring layered arches, rhythm, discovery, and quiet reading moments.",
     body:
@@ -94,6 +128,7 @@ export const projects = [
       "/images/artist-live-work/image3.jpeg",
       "/images/artist-live-work/image4.jpeg",
     ],
+    galleryImages: [] as string[],
     intro:
       "A live/work environment designed to balance privacy, creativity, reflection, and artistic production.",
     body:
@@ -115,6 +150,7 @@ export const projects = [
       "/images/mount-pleasant-bar/image3.jpeg",
       "/images/mount-pleasant-bar/image4.jpeg",
     ],
+    galleryImages: [] as string[],
     intro:
       "A hospitality project inspired by rhythm, music, community gathering, and local culture.",
     body:
@@ -136,6 +172,7 @@ export const projects = [
       "/images/sketches/image3.png",
       "/images/sketches/image4.png",
     ],
+    galleryImages: [] as string[],
     intro:
       "A collection of hand sketches, digital drawings, portraits, and visual studies.",
     body:
