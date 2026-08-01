@@ -14,6 +14,13 @@ import ClickGallery from "../../ClickGallery";
 const AUTOPLAY_MS = 5000; // how long each hero image stays before auto-advancing
 const SWIPE_THRESHOLD = 60; // px of drag needed to trigger a slide change
 
+// Renders **text** segments as <strong> for in-paragraph emphasis
+function renderEmphasis(text: string) {
+  return text
+    .split(/\*\*(.+?)\*\*/g)
+    .map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : part));
+}
+
 export default function ProjectPage() {
   const params = useParams();
   const slug = params.slug as string;
@@ -111,21 +118,33 @@ export default function ProjectPage() {
           <nav>
             <Link href="/#projects">Projects</Link>
             <Link href="/#about">About</Link>
-            <a href="/files/resume.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
-            <a href="/files/portfolio.pdf" target="_blank" rel="noopener noreferrer">Portfolio PDF</a>
+            <a href="/files/Resume_Shuree Batbold.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
+            <a href="/files/Portfolio_Shuree Batbold.pdf" target="_blank" rel="noopener noreferrer">Portfolio PDF</a>
           </nav>
         </div>
       </header>
 
+      <section className="projectTitleBar">
+        <h1>{project.title}</h1>
+      </section>
+
       <section className="projectDetailPage">
         <aside className="projectDetailText">
-          <h1>{project.title}</h1>
-
           <div className="projectFacts">
             <p><strong>Location</strong> — {project.location}</p>
             <p><strong>Area</strong> — {project.area}</p>
             <p><strong>Date</strong> — {project.date}</p>
           </div>
+
+          {project.body.split("\n\n").map((paragraph, index) => (
+            <p
+              key={index}
+              className="descPara"
+              style={{ animationDelay: `${0.15 + index * 0.25}s` }}
+            >
+              {renderEmphasis(paragraph)}
+            </p>
+          ))}
 
           <div className="software">
             {project.software.map((item) => {
@@ -141,14 +160,6 @@ export default function ProjectPage() {
             })}
           </div>
 
-          {project.body.split("\n\n").map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
-
-          <Link href="/" className="backHomeButton">
-            <span>←</span>
-            All projects
-          </Link>
         </aside>
 
         <section className="projectImageSide">
@@ -174,7 +185,15 @@ export default function ProjectPage() {
                 <div className="projectCarouselSlide" key={image}>
                   <img
                     src={image}
+                    alt=""
+                    aria-hidden="true"
+                    className="slideBackdrop"
+                    draggable={false}
+                  />
+                  <img
+                    src={image}
                     alt={`${project.title} — image ${index + 1}`}
+                    className="slideImage"
                     draggable={false}
                   />
                 </div>
@@ -226,6 +245,13 @@ export default function ProjectPage() {
           </div>
         </section>
       </section>
+
+      <div className="backHomeRow">
+        <Link href="/" className="backHomeButton">
+          <span>←</span>
+          All projects
+        </Link>
+      </div>
 
       {project.slug === "sketches" && (
         <section className="siteContainer holePunchSectionWrap">

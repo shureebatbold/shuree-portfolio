@@ -25,7 +25,7 @@ export const projects = [
     intro:
       "An intergenerational community center designed to connect seniors and children through shared learning, storytelling, play, wellness, and everyday care.",
     body:
-      "This project explores how interior architecture can reduce isolation and support meaningful exchange across generations. The design uses warm materials, framed views, clear circulation, and playful shared spaces to balance safety, independence, supervision, and community.",
+      "Between Ages grew from my belief that **spaces can help people feel less alone**. I developed the project through research into social isolation, age related stereotypes, child development, senior wellbeing, accessibility, and supervision. **Interviews with an older adult and a parent** helped me understand the need for independence, quiet retreat, clear visibility, and meaningful shared activities. These insights shaped the programming, adjacencies, and circulation, allowing seniors and children to connect naturally through everyday routines.\n\nWorking within the existing Southwest Neighborhood Library, the concept **Framed Storytelling** balances **connection with comfort and protection**. Layered thresholds and framed openings create visual relationships between classrooms, lounges, and shared spaces while supporting privacy and supervision. A **central commons, arts classroom, play nest**, and flexible gathering areas encourage creativity, storytelling, rest, and shared learning. Warm materials, natural light, and clear sightlines create a welcoming environment where every generation can feel **safe, valued, and part of the same community**.",
   },
   {
     slug: "whitefish-clinic",
@@ -84,7 +84,7 @@ export const projects = [
     intro:
       "A rural primary care clinic inspired by warmth, clarity, comfort, and ski-resort wayfinding.",
     body:
-      "Whitefish Primary Care Clinic began with a simple question: how can a medical environment feel clear and efficient without losing its warmth and humanity? I approached the project through research into rural healthcare access, patient stress, staff workflow, accessibility, aging populations, and sensory needs. These insights shaped programming, adjacencies, and circulation, creating a clear patient journey that supports privacy and efficient care.\n\nInspired by a ski resort, the concept Guiding Slope was developed to connect wayfinding to Whitefish. Warm wood tones and lodge inspired finishes create a welcoming arrival, while cooler clinical areas support focus and cleanliness. Curved ceilings, framed sightlines, daylight, and color coded paths guide movement naturally. A sensory room offers a calm retreat, while exam rooms and staff areas balance comfort, privacy, and workflow.",
+      "Whitefish Primary Care Clinic began with a simple question: how can a medical environment feel **clear and efficient without losing its warmth and humanity**? I approached the project through research into rural healthcare access, patient stress, staff workflow, accessibility, aging populations, and sensory needs. These insights shaped programming, adjacencies, and circulation, creating a **clear patient journey** that supports privacy and efficient care.\n\nInspired by a ski resort, the concept **Guiding Slope** was developed to connect **wayfinding** to Whitefish. Warm wood tones and lodge inspired finishes create a welcoming arrival, while cooler clinical areas support focus and cleanliness. Curved ceilings, framed sightlines, daylight, and color coded paths guide movement naturally. A **sensory room** offers a calm retreat, while exam rooms and staff areas balance comfort, privacy, and workflow.",
   },
   {
     slug: "florence-bookstore",
@@ -110,7 +110,7 @@ export const projects = [
     intro:
       "A bookstore concept exploring layered arches, rhythm, discovery, and quiet reading moments.",
     body:
-      "Inspired by Florence’s architectural language, the project uses thresholds, repetition, soft light, and intimate spatial pockets to create a calm retail experience centered on browsing, pause, and discovery.",
+      "Florence’s monumental architecture became the starting point for a bookstore that feels connected to its historic setting while offering a contemporary experience. I studied the scale, repetition, and layered history of Piazza della Signoria, then explored the arch through sketches and physical models. These studies led to **four monumental arched walls** that organize circulation, frame views, and divide the interior into clear zones without losing openness.\n\nThe concept **Layered Arches** transforms a familiar Florentine form into **both architecture and furniture**. Thickened walls integrate book storage, seating, and display, allowing visitors to move through a sequence of **framed moments and gradual discoveries**. Public gathering spaces, including the cafe, sit on the lower level, while rare books, records, a lounge, and multimedia spaces become quieter and more intimate above. Warm wood, leather, stone, glass, and soft color create a romantic, luminous interior where literature, architecture, and public life come together.",
   },
   {
     slug: "artist-live-work",
@@ -132,7 +132,7 @@ export const projects = [
     intro:
       "A live/work environment designed to balance privacy, creativity, reflection, and artistic production.",
     body:
-      "The project studies the relationship between living and making. The interior separates moments of rest, focus, display, and creative work while maintaining visual connection and flexibility.",
+      "**Zaria Forman’s artwork** became the foundation for a home that supports **both creativity and everyday life**. I researched her large scale pastel drawings, artistic process, and ability to transform distant glacial landscapes into emotional experiences. I also studied the limitations of the narrow Georgetown townhouse, including its compressed width, vertical circulation, and limited openness. These conditions shaped the organization of the home, studio, gallery, and office, creating a clear relationship between private living and public creative work.\n\nThe concept **Dualities** developed from **contrasts** found in both Forman’s artwork and the existing architecture, including **vastness and intimacy, warmth and coolness, and solid and open space**. The upper studio and gallery are bright, flexible, and filled with natural light, allowing room for large artwork and client visits. The living spaces below feel warmer, quieter, and more grounded. Framed views, openings between floors, and a layered material palette connect both environments, allowing **art and daily life to coexist** without one overwhelming the other.",
   },
   {
     slug: "mount-pleasant-bar",
@@ -154,7 +154,7 @@ export const projects = [
     intro:
       "A hospitality project inspired by rhythm, music, community gathering, and local culture.",
     body:
-      "The design translates the energy of Mount Pleasant’s drum circle into a social interior shaped by movement, sound, warm lighting, and communal gathering.",
+      "The energy of the **Malcolm X Park drum circle** became the heart of this neighborhood bar. I studied how performers and visitors gather around music, how the park steps create informal seating, and how people remain connected from different distances. These observations shaped the layout, circulation, and seating, keeping the stage visible while creating a range of social experiences throughout the space.\n\nThe concept **Rhythm and Roots** translates the **movement, community, and cultural spirit** of the drum circle into an interior in Mount Pleasant. The **stage sits at the center** of the plan, surrounded by communal tables and tiered seating inspired by the park. Curved forms, warm natural materials, layered lighting, and rhythmic details bring energy into the space without feeling overly themed. The design balances performance, dining, circulation, and conversation, creating a lively place that feels **rooted in its neighborhood and welcoming to everyone**.",
   },
   {
     slug: "sketches",
