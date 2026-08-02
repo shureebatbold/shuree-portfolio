@@ -13,19 +13,19 @@ type Skill = {
 
 // Edit labels/icons here. Icon files should live in /public/icons/
 const SKILLS: Skill[] = [
-  { id: "photoshop", label: "Photoshop", icon: "/icons/photoshop.svg", rotate: -6, top: "3%", left: "2%" },
-  { id: "illustrator", label: "Illustrator", icon: "/icons/illustrator.svg", rotate: 4, top: "9%", left: "20%" },
-  { id: "indesign", label: "InDesign", icon: "/icons/indesign.svg", rotate: -3, top: "1%", left: "39%" },
-  { id: "aftereffects", label: "After Effects", icon: "/icons/aftereffects.svg", rotate: 5, top: "11%", left: "58%" },
-  { id: "revit", label: "Revit", icon: "/icons/revit.svg", rotate: -5, top: "3%", left: "78%" },
-  { id: "enscape", label: "Enscape", icon: "/icons/enscape.svg", rotate: -7, top: "33%", left: "6%" },
-  { id: "canva", label: "Canva", icon: "/icons/canva.svg", rotate: 3, top: "39%", left: "26%" },
-  { id: "office", label: "Microsoft Office", icon: "/icons/office.svg", rotate: -4, top: "29%", left: "46%" },
-  { id: "blender", label: "Blender", icon: "/icons/blender.svg", rotate: 6, top: "37%", left: "66%" },
-  { id: "arcgis", label: "ArcGIS", icon: "/icons/arcgis.svg", rotate: -3, top: "31%", left: "85%" },
-  { id: "sketchup", label: "SketchUp", icon: "/icons/sketchup.svg", rotate: 4, top: "65%", left: "12%" },
-  { id: "procreate", label: "Procreate", icon: "/icons/procreate.svg", rotate: -6, top: "69%", left: "34%" },
-  { id: "autodesk", label: "Autodesk", icon: "/icons/autodesk.svg", rotate: 5, top: "63%", left: "56%" },
+  { id: "photoshop", label: "Photoshop", icon: "/icons/photoshop.svg", rotate: -6, top: "11.0%", left: "8.8%" },
+  { id: "illustrator", label: "Illustrator", icon: "/icons/illustrator.svg", rotate: 4, top: "16.2%", left: "24.3%" },
+  { id: "indesign", label: "InDesign", icon: "/icons/indesign.svg", rotate: -3, top: "9.4%", left: "40.6%" },
+  { id: "aftereffects", label: "After Effects", icon: "/icons/aftereffects.svg", rotate: 5, top: "17.9%", left: "56.9%" },
+  { id: "revit", label: "Revit", icon: "/icons/revit.svg", rotate: -5, top: "11.0%", left: "74.0%" },
+  { id: "enscape", label: "Enscape", icon: "/icons/enscape.svg", rotate: -7, top: "36.7%", left: "12.4%" },
+  { id: "canva", label: "Canva", icon: "/icons/canva.svg", rotate: 3, top: "41.7%", left: "29.4%" },
+  { id: "office", label: "Microsoft Office", icon: "/icons/office.svg", rotate: -4, top: "33.2%", left: "46.6%" },
+  { id: "blender", label: "Blender", icon: "/icons/blender.svg", rotate: 6, top: "40.3%", left: "63.7%" },
+  { id: "arcgis", label: "ArcGIS", icon: "/icons/arcgis.svg", rotate: -3, top: "35.0%", left: "80.0%" },
+  { id: "sketchup", label: "SketchUp", icon: "/icons/sketchup.svg", rotate: 4, top: "64.1%", left: "17.4%" },
+  { id: "procreate", label: "Procreate", icon: "/icons/procreate.svg", rotate: -6, top: "67.5%", left: "36.3%" },
+  { id: "autodesk", label: "Autodesk", icon: "/icons/autodesk.svg", rotate: 5, top: "62.4%", left: "55.1%" },
 ];
 
 type Pos = { x: number; y: number };

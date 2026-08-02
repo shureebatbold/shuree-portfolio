@@ -12,12 +12,12 @@ export default function Home() {
     <main>
       <header className="topNav">
         <div className="siteContainer topNavInner">
-          <Link href="/" className="brand">SHUREE BATBOLD</Link>
+          <Link href="/" className="brand">Shuree Batbold</Link>
 
           <nav>
             <a href="#projects">Projects</a>
             <a href="#about">About</a>
-            <a href="/files/Resume_Shuree Batbold.pdf" target="_blank">Resume PDF</a>
+            <Link href="/resume">Resume</Link>
             <a href="/files/Portfolio_Shuree Batbold.pdf" target="_blank">Portfolio PDF</a>
           </nav>
         </div>
@@ -30,9 +30,10 @@ export default function Home() {
     </p>
 
     <h1>
-      Thank you for visiting my portfolio. Please
-      feel free to explore my work, and if you have any questions or
-      would like to connect, I would love to hear from you!
+      Thank you for visiting. Each project reflects my belief that
+      thoughtful design can support people, strengthen communities, and
+      bring more care into everyday life. I hope you enjoy exploring my
+      work, and I would love to connect.
     </h1>
 
     <div className="contactLinks">

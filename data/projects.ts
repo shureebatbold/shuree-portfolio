@@ -2,7 +2,8 @@ export const projects = [
   {
     slug: "between-ages",
     title: "Between Ages",
-    program: "Intergenerational Community Center, Adaptive Reuse",
+    concept: "Framed Storytelling",
+    program: "Adaptive Reuse, Intergenerational Center",
     location: "900 Wesley Pl, Washington, DC",
     area: "~20,000 SF",
     date: "Spring 2026",
@@ -30,6 +31,7 @@ export const projects = [
   {
     slug: "whitefish-clinic",
     title: "Whitefish Clinic",
+    concept: "Guiding Slope",
     program: "Healthcare Design",
     location: "Whitefish, Montana",
     area: "~8,000 SF",
@@ -89,6 +91,7 @@ export const projects = [
   {
     slug: "florence-bookstore",
     title: "Florence Bookstore",
+    concept: "Layered Arches",
     program: "Retail / Cultural Design",
     location: "Florence, Italy",
     area: "~8000 SF",
@@ -115,6 +118,7 @@ export const projects = [
   {
     slug: "artist-live-work",
     title: "Artist Live / Work Space",
+    concept: "Dualities",
     program: "Residential",
     location: "Washington, DC",
     area: "~3600 SF",
@@ -137,6 +141,7 @@ export const projects = [
   {
     slug: "mount-pleasant-bar",
     title: "Drum Circle Bar",
+    concept: "Rhythm and Roots",
     program: "Hospitality Design",
     location: "Mount Pleasant, Washington, DC",
     area: "~1600 SF",
@@ -159,6 +164,7 @@ export const projects = [
   {
     slug: "sketches",
     title: "Sketches & Artwork",
+    concept: "",
     program: "Hand Sketching / Digital Art",
     location: "Selected Works",
     area: "Personal + Academic Work",

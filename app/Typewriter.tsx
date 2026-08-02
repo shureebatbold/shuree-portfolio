@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const ROLES = [
   "an Interior Designer",
   "a Visual Artist",
-  "a Storyteller",
+  "a Forever Student",
 ];
 
 const TYPE_SPEED = 90; // ms per character while typing — higher = slower typing

@@ -36,6 +36,43 @@ export default function ProjectPage() {
   const dragStartX = useRef(0);
   const imageCount = project?.images.length || 0;
 
+  // Drag-to-scroll for the thumbnail strip
+  const thumbsRef = useRef<HTMLDivElement>(null);
+  const thumbDrag = useRef({ active: false, startX: 0, startLeft: 0, moved: false });
+
+  function onThumbsPointerDown(e: React.PointerEvent<HTMLDivElement>) {
+    const el = thumbsRef.current;
+    if (!el) return;
+    thumbDrag.current = {
+      active: true,
+      startX: e.clientX,
+      startLeft: el.scrollLeft,
+      moved: false,
+    };
+  }
+
+  function onThumbsPointerMove(e: React.PointerEvent<HTMLDivElement>) {
+    const el = thumbsRef.current;
+    if (!el || !thumbDrag.current.active) return;
+    const delta = e.clientX - thumbDrag.current.startX;
+    if (Math.abs(delta) > 4) thumbDrag.current.moved = true;
+    el.scrollLeft = thumbDrag.current.startLeft - delta;
+  }
+
+  function onThumbsPointerUp() {
+    thumbDrag.current.active = false;
+  }
+
+  // Suppress the click that ends a drag, so panning never changes the slide
+  function onThumbClick(e: React.MouseEvent, index: number) {
+    if (thumbDrag.current.moved) {
+      e.preventDefault();
+      thumbDrag.current.moved = false;
+      return;
+    }
+    goTo(index);
+  }
+
   function goTo(index: number) {
     setCurrent((index + imageCount) % imageCount);
   }
@@ -113,12 +150,12 @@ export default function ProjectPage() {
     <main>
       <header className="topNav">
         <div className="siteContainer topNavInner">
-          <Link href="/" className="brand">SHUREE BATBOLD</Link>
+          <Link href="/" className="brand">Shuree Batbold</Link>
 
           <nav>
             <Link href="/#projects">Projects</Link>
             <Link href="/#about">About</Link>
-            <a href="/files/Resume_Shuree Batbold.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
+            <Link href="/resume">Resume</Link>
             <a href="/files/Portfolio_Shuree Batbold.pdf" target="_blank" rel="noopener noreferrer">Portfolio PDF</a>
           </nav>
         </div>
@@ -126,6 +163,9 @@ export default function ProjectPage() {
 
       <section className="projectTitleBar">
         <h1>{project.title}</h1>
+        {project.concept && (
+          <p className="projectConcept">{project.concept}</p>
+        )}
       </section>
 
       <section className="projectDetailPage">
@@ -231,15 +271,24 @@ export default function ProjectPage() {
             )}
           </div>
 
-          <div className="projectThumbs">
+          <div
+            className="projectThumbs"
+            ref={thumbsRef}
+            onPointerDown={onThumbsPointerDown}
+            onPointerMove={onThumbsPointerMove}
+            onPointerUp={onThumbsPointerUp}
+            onPointerLeave={onThumbsPointerUp}
+            onPointerCancel={onThumbsPointerUp}
+          >
             {project.images.map((image, index) => (
               <button
                 key={image}
-                onClick={() => goTo(index)}
+                onClick={(e) => onThumbClick(e, index)}
                 className={index === current ? "activeThumb" : ""}
                 aria-label={`Go to image ${index + 1}`}
               >
-                <img src={image} alt="" />
+                <img src={image} alt="" draggable={false} />
+                <span className="thumbNumber">{index + 1}</span>
               </button>
             ))}
           </div>

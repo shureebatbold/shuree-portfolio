@@ -8,14 +8,14 @@ const SOCIAL_LINKS = [
 const SECTION_LINKS = [
   { label: "About", href: "/#about" },
   { label: "Projects", href: "/#projects" },
-  { label: "Resume PDF", href: "/files/Resume_Shuree Batbold.pdf" },
+  { label: "Resume", href: "/resume" },
   { label: "Portfolio PDF", href: "/files/Portfolio_Shuree Batbold.pdf" },
 ];
 
 // Repeated once — the CSS animation shifts the track by exactly 50%,
 // so this needs to render twice back-to-back for a seamless loop.
 const MARQUEE_TEXT =
-  "SHUREE BATBOLD \u00B7 \u00A0";
+  "Shuree Batbold \u00B7 \u00A0";
 
 export default function Footer() {
   return (
