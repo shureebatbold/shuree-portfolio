@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { projects } from "@/data/projects";
 import BestWorksSlideshow from "./BestWorksSlideshow";
 import Typewriter from "./Typewriter";
 import Footer from "./Footer";
 import SkillsBoard from "./SkillsBoard";
 import PhotoAlbum from "./PhotoAlbum";
 import ContactLinks from "./ContactLinks";
+import ProjectCarousel from "./ProjectCarousel";
 import { albumPhotos } from "./albumPhotos";
 
 export default function Home() {
@@ -52,19 +52,7 @@ export default function Home() {
   <h3>Selected Works</h3>
 </section>
 
-      <section id="projects" className="siteContainer projectGrid">
-       {projects.slice(0, 6).map((project) => (
-          <Link href={`/project/${project.slug}`} className="gridProject" key={project.slug}>
-            <img src={project.hero} alt={project.title} />
-
-           <div className="projectOverlay">
-  <h2>{project.title}</h2>
-  <p>{project.program}</p>
-</div>
-
-          </Link>
-        ))}
-      </section>
+      <ProjectCarousel />
 
 <BestWorksSlideshow />
 

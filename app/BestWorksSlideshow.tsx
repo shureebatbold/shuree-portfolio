@@ -111,7 +111,6 @@ export default function BestWorksSlideshow() {
     <section className="bestWorksFrame">
       <div className="bestWorksLabel">
         <h3>Selected Moments</h3>
-        <p className="bestWorksHint">Drag to explore</p>
       </div>
 
       <div
