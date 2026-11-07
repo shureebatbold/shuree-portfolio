@@ -23,7 +23,7 @@ export default function Footer() {
       <div className="siteContainer footerTop">
         <div className="footerIntro">
           <p className="footerTagline">
-            Interior Design ·  Visual Art
+            Interior Architecture &amp; Design
           </p>
           <a href="mailto:shureehne@gmail.com" className="footerEmail">
             shureehne@gmail.com

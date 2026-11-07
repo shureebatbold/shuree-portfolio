@@ -1,59 +1,77 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-// Edit this list to change which roles cycle through the typewriter.
-const ROLES = [
-  "an Interior Designer",
-  "a Visual Artist",
-  "a Forever Student",
-];
+// Edit this line to change the greeting that types itself out.
+const PHRASE = "Thank you for being here.";
 
 const TYPE_SPEED = 90; // ms per character while typing — higher = slower typing
-const DELETE_SPEED = 50; // ms per character while deleting — higher = slower deleting
-const HOLD_TIME = 1900; // ms to hold the full word before deleting — higher = longer pause on each word
-const PAUSE_TIME = 450; // ms pause on an empty string before typing the next word
-
-type Phase = "typing" | "holding" | "deleting" | "pausing";
+const START_DELAY = 350; // ms before the first character appears
 
 export default function Typewriter() {
-  const [roleIndex, setRoleIndex] = useState(0);
   const [text, setText] = useState("");
-  const [phase, setPhase] = useState<Phase>("typing");
+  const [running, setRunning] = useState(false);
+  const hostRef = useRef<HTMLSpanElement>(null);
 
+  // Replay the animation every time the line scrolls back into view.
   useEffect(() => {
-    const currentRole = ROLES[roleIndex];
-    let timeout: ReturnType<typeof setTimeout>;
+    const el = hostRef.current;
+    if (!el) return;
 
-    if (phase === "typing") {
-      if (text.length < currentRole.length) {
-        timeout = setTimeout(() => {
-          setText(currentRole.slice(0, text.length + 1));
-        }, TYPE_SPEED);
-      } else {
-        timeout = setTimeout(() => setPhase("deleting"), HOLD_TIME);
-      }
-    } else if (phase === "deleting") {
-      if (text.length > 0) {
-        timeout = setTimeout(() => {
-          setText(currentRole.slice(0, text.length - 1));
-        }, DELETE_SPEED);
-      } else {
-        timeout = setTimeout(() => setPhase("pausing"), PAUSE_TIME);
-      }
-    } else if (phase === "pausing") {
-      setRoleIndex((prev) => (prev + 1) % ROLES.length);
-      setPhase("typing");
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reduceMotion) {
+      setText(PHRASE);
+      return;
     }
 
+    let startTimer: ReturnType<typeof setTimeout>;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setText("");
+          setRunning(false);
+          startTimer = setTimeout(() => setRunning(true), START_DELAY);
+        } else {
+          clearTimeout(startTimer);
+          setRunning(false);
+          setText("");
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(el);
+    return () => {
+      clearTimeout(startTimer);
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!running || text.length >= PHRASE.length) return;
+    const timeout = setTimeout(() => {
+      setText(PHRASE.slice(0, text.length + 1));
+    }, TYPE_SPEED);
     return () => clearTimeout(timeout);
-  }, [text, phase, roleIndex]);
+  }, [running, text]);
 
   return (
-    <span className="typewriter">
-      {text}
-      <span className="typewriterCursor" aria-hidden="true">
-        |
+    <span className="typewriter" ref={hostRef}>
+      <span className="sr-only">{PHRASE}</span>
+
+      {/* Invisible full phrase holds the final width, so nothing below
+          shifts around while the visible text is still typing. */}
+      <span className="typewriterSizer" aria-hidden="true">
+        {PHRASE}
+      </span>
+
+      <span className="typewriterText" aria-hidden="true">
+        {text}
+        <span className="typewriterCursor">|</span>
       </span>
     </span>
   );

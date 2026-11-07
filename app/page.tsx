@@ -5,6 +5,7 @@ import Typewriter from "./Typewriter";
 import Footer from "./Footer";
 import SkillsBoard from "./SkillsBoard";
 import PhotoAlbum from "./PhotoAlbum";
+import ContactLinks from "./ContactLinks";
 import { albumPhotos } from "./albumPhotos";
 
 export default function Home() {
@@ -25,23 +26,24 @@ export default function Home() {
 
    <section className="homeIntro">
   <div className="homeIntroText">
-    <p>
-      Welcome, I&rsquo;m <Typewriter />
-    </p>
+    <div className="introHeading">
+      <p className="introTagline">Welcome to my portfolio website</p>
+
+      <p>
+        <Typewriter />
+      </p>
+    </div>
 
     <h1>
-      Thank you for visiting. Each project reflects my belief that
-      thoughtful design can support people, strengthen communities, and
-      bring more care into everyday life. I hope you enjoy exploring my
-      work, and I would love to connect.
+      Each project reflects my belief that thoughtful design can support
+      people, strengthen communities, and bring more care into everyday
+      life. I hope you enjoy exploring my work,
+      <br />
+      and I would love to connect.
     </h1>
-
-    <div className="contactLinks">
-      <a href="mailto:shureehne@gmail.com">shureehne@gmail.com</a>
-      <a href="https://linkedin.com/in/shureebat" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://instagram.com/shueiverse" target="_blank" rel="noopener noreferrer">Instagram</a>
-    </div>
   </div>
+
+ <ContactLinks />
 
  <PhotoAlbum photos={albumPhotos} />
 </section>
@@ -72,41 +74,37 @@ export default function Home() {
             <h2>About Me</h2>
 
             <p>
-              My name is Shuree, and I was born and raised in Ulaanbaatar, Mongolia. Now
-              based in Arlington, Virginia, I have been shaped by both my Mongolian roots
-              and my experience studying and working in the Washington, DC area. Moving
-              between different cultures has made me especially attentive to how people
-              experience spaces, and it has strengthened my belief that thoughtful design
-              can help people feel welcomed, understood, and connected.
+              Growing up in Ulaanbaatar, Mongolia, and later building a life in the
+              Washington, DC area has shaped how I see the world and the spaces we
+              inhabit. Experiencing different cultures and communities has deepened my
+              appreciation for the relationship between people, place, and design.
             </p>
 
             <p>
-              Before pursuing interior architecture, I earned a bachelor&rsquo;s degree in
-              Computer Science. Although technology and design may seem like very different
-              paths, my technical background continues to influence the way I work. It
-              taught me how to organize complex information, solve problems patiently, and
-              think through how many individual parts come together as one complete system.
-              Wanting to combine that analytical mindset with my lifelong interest in art
-              and creativity led me to earn my MFA in Interior Architecture from The George
-              Washington University.
+              My path to interior architecture began in Computer Science, where I
+              developed a foundation in analytical thinking, problem-solving, and systems
+              organization. A lifelong interest in art and the built environment
+              eventually led me to pursue an MFA in Interior Architecture at The George
+              Washington University, bringing together my technical background and
+              creative interests.
             </p>
 
             <p>
-              My work is centered in people and the stories behind the spaces they use. I
-              enjoy every stage of the design process, from research, moodboards, and early
-              concept development to space planning, and technical documentation. 
-              I am especially interested in environments where design can make a
-              meaningful difference in everyday life.
+              I approach design with curiosity, empathy, and an appreciation for the
+              details that shape everyday experiences. From early research and concept
+              development to spatial planning and technical documentation, I enjoy
+              understanding how individual elements come together to create a cohesive
+              whole. I am particularly interested in designing environments that bring
+              people together, support well-being, and leave a lasting impact on their
+              communities.
             </p>
 
             <p>
-              When I am not designing, I enjoy creating digital art, exploring new places,
-              watching films, and noticing the small details that give spaces their
-              personality. I am constantly collecting ideas from architecture, culture,
-              nature, food, and everyday experiences.
+              Outside of design, I find inspiration in travel, art, film, nature, and the
+              everyday moments that reveal how people live and connect. I look forward to
+              continuing to learn, collaborate, and contribute to spaces that make a
+              meaningful difference.
             </p>
-
-            <p>Thank you for visiting and taking the time to learn more about me!</p>
           </div>
 
           <div className="aboutRight">
@@ -117,11 +115,6 @@ export default function Home() {
               <p>
                 Commercial Interiors   ·   Workplace   ·   Hospitality   ·   Healthcare   ·   Community Centered Design   ·   Multi-Family Residential   ·   Sustainability   ·   Interactive Architecture
               </p>
-            </div>
-
-            <div>
-              <h3>Awards / Recognition</h3>
-              <p>2026 IIDA Student Premiere Awards - Student Winner (Whitefish Clinic)</p>
             </div>
 
             <div>
